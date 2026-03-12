@@ -1,0 +1,382 @@
+.main {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.formSection,
+.listSection {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #4a4a68;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.count {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #888;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e8e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+  background: white;
+}
+
+.input:disabled,
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.addButton {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.1s;
+  align-self: flex-start;
+}
+
+.addButton:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.addButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.errorText {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+}
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  color: #c53030;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.dismissBtn {
+  background: transparent;
+  color: #c53030;
+  font-size: 0.85rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+
+.dismissBtn:hover {
+  background: #fed7d7;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  color: #888;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e8e8f0;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2.5rem;
+  color: #aaa;
+}
+
+.emptyIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.todoList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.todoItem {
+  border: 2px solid #e8e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fafafa;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.todoItem:hover {
+  border-color: #c3c9f5;
+  background: white;
+}
+
+.todoItem.completed {
+  background: #f7f7f7;
+  border-color: #e0e0e8;
+  opacity: 0.75;
+}
+
+.todoContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.todoLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #667eea;
+  flex-shrink: 0;
+}
+
+.todoLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+}
+
+.todoTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  word-break: break-word;
+}
+
+.completed .todoTitle {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todoDescription {
+  font-size: 0.875rem;
+  color: #666;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.todoDate {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-top: 0.25rem;
+}
+
+.todoActions {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.editButton,
+.deleteButton {
+  background: transparent;
+  font-size: 1.1rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 6px;
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.editButton:hover {
+  background: #eef0ff;
+}
+
+.deleteButton:hover {
+  background: #fff0f0;
+}
+
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.editInput,
+.editTextarea {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 2px solid #c3c9f5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  background: white;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+.editInput:focus,
+.editTextarea:focus {
+  border-color: #667eea;
+}
+
+.editInput:disabled,
+.editTextarea:disabled {
+  opacity: 0.6;
+}
+
+.editActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.saveButton {
+  padding: 0.5rem 1rem;
+  background: #667eea;
+  color: white;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.saveButton:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.saveButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cancelButton {
+  padding: 0.5rem 1rem;
+  background: #f0f0f0;
+  color: #555;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+.cancelButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.footer {
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .formSection,
+  .listSection {
+    padding: 1rem;
+  }
+
+  .todoContent {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .todoActions {
+    align-self: flex-end;
+  }
+}
